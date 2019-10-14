@@ -1,0 +1,37 @@
+<?php
+if (session_id() == "")
+{
+   session_start();
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST')
+{
+   if (isset($_POST['captcha_code'],$_SESSION['random_txt']) && md5($_POST['captcha_code']) == $_SESSION['random_txt'])
+   {
+      unset($_POST['captcha_code'],$_SESSION['random_txt']);
+   }
+   else
+   {
+      echo '<b>The entered code was wrong.</b><br>';
+      echo '<a href="javascript:history.back()">Go Back</a>';
+      exit;
+   }
+}
+?>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 15 Trial Version - http://www.wysiwygwebbuilder.com">
+<link href="Untitled1.css" rel="stylesheet">
+<link href="index.css" rel="stylesheet">
+</head>
+<body>
+<a href="http://www.wysiwygwebbuilder.com" target="_blank"><img src="images/builtwithwwb15.png" alt="WYSIWYG Web Builder" style="position:absolute;left:441px;top:967px;margin: 0;border-width:0;z-index:250"></a>
+<div id="wb_Captcha1" style="position:absolute;left:32px;top:44px;width:345px;height:38px;z-index:1;">
+<img src="captcha1.php" alt="Click for new image" title="Click for new image" style="cursor:pointer;float:left;width:100px;height:38px;" onclick="this.src='captcha1.php?'+Math.random()">
+<span><input type="text" id="Captcha1" style="margin-top:18px;width:calc(100% - 4px);height:16px;" name="captcha_code" value="" spellcheck="false"></span></div>
+<div id="wb_Text1" style="position:absolute;left:32px;top:15px;width:133px;height:15px;z-index:2;">
+<span style="color:#000000;font-family:Arial;font-size:13px;">Capa</span></div>
+</body>
+</html>
