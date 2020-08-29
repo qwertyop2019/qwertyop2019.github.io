@@ -8,34 +8,8 @@
  <title>UI production</title>
   <link rel="icon" href="favicon.ico">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <style type="text/css">
-   body { margin: 0; }
-   #content  { position: absolute; } 
- 
-
-   #content {
-    top: 80px; /* Расстояние от верхнего края */
-    left: 170px; /* Расстояние от левого края */ 
-    bottom: 0; right: 0;
-   }
-  </style>
-    <meta charset="UTF-8" />
-  <style type="text/css" media="screen">
-    body {
-      background:#000;
-      font-family:sans-serif;
-      margin:0px;
-      padding:0px;
-    }
-    .container {
-      text-align: center;
-      margin-top: 200px;
-    }
-    h1 {
-      text-transform: uppercase;
-      color: #fff;
-    }
-  </style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
  </head>
  <body> 
 <head>
@@ -48,11 +22,17 @@
 <style>
   body { background: url(eboy.mp4); }
 </style>
+<style>
+   .layer {
+    height: 1080px; /* Высота блока */
+    width: 1080px;
+   
+   
+   }
+  </style>
  <body>
-  <div class="fullscreen-bg">
-		<div class="overlay">
-			<h1>Простой пример<br>фонового видео на сайте</h1>
-		</div>
+  <div class="layer">
+		
 	    <video loop muted autoplay poster="video/plane.jpg" class="fullscreen-bg__video">
 	        <source src="video/eboy.mp4" type="video/mp4">
 	        <source src="video/eboy.webm" type="video/webm">
